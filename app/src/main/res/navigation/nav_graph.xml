@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Home -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="id.editor.newsapp.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_postDetail"
+            app:destination="@id/postDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_postList"
+            app:destination="@id/postListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Category List -->
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="id.editor.newsapp.ui.category.CategoryListFragment"
+        android:label="@string/categories_title"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_categoryList_to_postList"
+            app:destination="@id/postListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Tag List -->
+    <fragment
+        android:id="@+id/tagListFragment"
+        android:name="id.editor.newsapp.ui.tag.TagListFragment"
+        android:label="@string/tags_title"
+        tools:layout="@layout/fragment_tag_list">
+        <action
+            android:id="@+id/action_tagList_to_postList"
+            app:destination="@id/postListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Post List -->
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="id.editor.newsapp.ui.postlist.PostListFragment"
+        android:label="Artikel"
+        tools:layout="@layout/fragment_post_list">
+        <argument
+            android:name="categoryId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="tagId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="tagName"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_postList_to_postDetail"
+            app:destination="@id/postDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Post Detail -->
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="id.editor.newsapp.ui.postdetail.PostDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_post_detail">
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+    </fragment>
+
+    <!-- Search -->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="id.editor.newsapp.ui.search.SearchFragment"
+        android:label="@string/nav_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_to_postDetail"
+            app:destination="@id/postDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Page List -->
+    <fragment
+        android:id="@+id/pageListFragment"
+        android:name="id.editor.newsapp.ui.page.PageListFragment"
+        android:label="@string/pages_title"
+        tools:layout="@layout/fragment_page_list">
+        <action
+            android:id="@+id/action_pageList_to_pageDetail"
+            app:destination="@id/pageDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <!-- Page Detail -->
+    <fragment
+        android:id="@+id/pageDetailFragment"
+        android:name="id.editor.newsapp.ui.page.PageDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_page_detail">
+        <argument
+            android:name="pageId"
+            app:argType="integer" />
+    </fragment>
+
+    <!-- Contact -->
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="id.editor.newsapp.ui.contact.ContactFragment"
+        android:label="@string/contact_title"
+        tools:layout="@layout/fragment_contact" />
+
+</navigation>

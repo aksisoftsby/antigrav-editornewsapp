@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Editor.ID</string>
+    <string name="app_tagline">Berita Terkini dan Terpercaya</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Beranda</string>
+    <string name="nav_categories">Kategori</string>
+    <string name="nav_tags">Tag</string>
+    <string name="nav_pages">Halaman</string>
+    <string name="nav_search">Cari</string>
+    <string name="nav_contact">Kontak</string>
+    <string name="nav_dark_mode">Mode Gelap</string>
+
+    <!-- Home -->
+    <string name="section_latest_news">Berita Terbaru</string>
+    <string name="section_trending">Trending</string>
+    <string name="section_by_category">Pilih Kategori</string>
+    <string name="see_all">Lihat Semua</string>
+    <string name="load_more">Muat Lebih Banyak</string>
+
+    <!-- Post -->
+    <string name="by_author">Oleh %s</string>
+    <string name="reading_time">%d menit membaca</string>
+    <string name="share_post">Bagikan Artikel</string>
+    <string name="open_in_browser">Buka di Browser</string>
+    <string name="related_posts">Artikel Terkait</string>
+
+    <!-- Category -->
+    <string name="categories_title">Semua Kategori</string>
+    <string name="category_posts_count">%d artikel</string>
+
+    <!-- Tags -->
+    <string name="tags_title">Semua Tag</string>
+    <string name="tag_posts_count">%d artikel</string>
+
+    <!-- Pages -->
+    <string name="pages_title">Halaman</string>
+
+    <!-- Search -->
+    <string name="search_hint">Cari berita…</string>
+    <string name="search_no_results">Tidak ada hasil untuk \"%s\"</string>
+    <string name="search_results_for">Hasil untuk: %s</string>
+
+    <!-- Contact -->
+    <string name="contact_title">Hubungi Kami</string>
+    <string name="contact_subtitle">Kami senang mendengar dari Anda</string>
+    <string name="contact_email">redaksi@editor.id</string>
+    <string name="contact_website">https://editor.id</string>
+    <string name="contact_email_label">Email Redaksi</string>
+    <string name="contact_website_label">Website</string>
+    <string name="contact_social_label">Media Sosial</string>
+    <string name="contact_about_label">Tentang Kami</string>
+    <string name="contact_about_text">Editor.ID adalah platform berita digital yang menyajikan informasi terkini, terpercaya, dan berkualitas. Kami berkomitmen untuk memberikan jurnalisme yang independen dan bertanggung jawab.</string>
+    <string name="send_email">Kirim Email</string>
+    <string name="visit_website">Kunjungi Website</string>
+
+    <!-- States -->
+    <string name="loading">Memuat…</string>
+    <string name="error_generic">Terjadi kesalahan. Silakan coba lagi.</string>
+    <string name="error_network">Tidak ada koneksi internet.</string>
+    <string name="retry">Coba Lagi</string>
+    <string name="empty_posts">Belum ada artikel.</string>
+    <string name="empty_categories">Belum ada kategori.</string>
+    <string name="empty_tags">Belum ada tag.</string>
+
+    <!-- Pagination -->
+    <string name="page_n_of_m">Halaman %1$d dari %2$d</string>
+
+    <!-- Date format -->
+    <string name="date_format">dd MMM yyyy</string>
+</resources>
