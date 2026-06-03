@@ -74,6 +74,12 @@
         <item name="cornerSize">16dp</item>
     </style>
 
+    <!-- Circular shape overlay for ShapeableImageView (e.g. author avatar) -->
+    <style name="ShapeAppearanceOverlay.Material3.Corner.Full" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
     <!-- Post Detail WebView Container -->
     <style name="Widget.EditorNews.PostContent" parent="">
         <item name="android:lineSpacingMultiplier">1.6</item>
