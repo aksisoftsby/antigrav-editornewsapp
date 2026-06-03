@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/homeFragment"
             android:icon="@drawable/ic_home"
             android:title="@string/nav_home" />
         <item
-            android:id="@+id/nav_categories"
+            android:id="@+id/categoryListFragment"
             android:icon="@drawable/ic_category"
             android:title="@string/nav_categories" />
         <item
-            android:id="@+id/nav_tags"
+            android:id="@+id/tagListFragment"
             android:icon="@drawable/ic_tag"
             android:title="@string/nav_tags" />
         <item
-            android:id="@+id/nav_pages"
+            android:id="@+id/pageListFragment"
             android:icon="@drawable/ic_article"
             android:title="@string/nav_pages" />
     </group>
     <item android:title="Lainnya">
         <menu>
             <item
-                android:id="@+id/nav_contact"
+                android:id="@+id/contactFragment"
                 android:icon="@drawable/ic_contact"
                 android:title="@string/nav_contact" />
         </menu>

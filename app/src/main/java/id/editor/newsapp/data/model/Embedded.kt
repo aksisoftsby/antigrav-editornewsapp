@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Embedded(
-    @SerializedName("wp:featuredmedia") val featuredMedia: List<List<MediaItem>>? = null,
+    @SerializedName("wp:featuredmedia") val featuredMedia: List<MediaItem>? = null,
     @SerializedName("author") val authors: List<Author>? = null,
     @SerializedName("wp:term") val terms: List<List<WpTerm>>? = null
 ) : Parcelable

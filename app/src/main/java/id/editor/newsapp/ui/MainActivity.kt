@@ -59,17 +59,6 @@ class MainActivity : AppCompatActivity() {
                 if (isTopLevel) android.view.View.VISIBLE else android.view.View.GONE
         }
 
-        // Drawer nav extra destinations
-        binding.navigationView.setNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_pages -> navController.navigate(R.id.pageListFragment)
-                R.id.nav_contact -> navController.navigate(R.id.contactFragment)
-                else -> navController.navigate(item.itemId)
-            }
-            binding.drawerLayout.closeDrawers()
-            true
-        }
-
         // Toolbar menu
         binding.toolbar.inflateMenu(R.menu.toolbar_menu)
         binding.toolbar.setOnMenuItemClickListener { item ->

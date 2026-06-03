@@ -25,7 +25,7 @@ data class Post(
     @SerializedName("_embedded") val embedded: @RawValue Embedded? = null
 ) : Parcelable {
     fun getFeaturedImageUrl(): String? {
-        return embedded?.featuredMedia?.firstOrNull()?.firstOrNull()?.sourceUrl
+        return embedded?.featuredMedia?.firstOrNull()?.sourceUrl
     }
 
     fun getAuthorName(): String {
