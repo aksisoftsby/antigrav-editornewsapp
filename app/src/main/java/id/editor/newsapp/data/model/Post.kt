@@ -28,6 +28,13 @@ data class Post(
         return embedded?.featuredMedia?.firstOrNull()?.sourceUrl
     }
 
+    fun getFeaturedImageMediumUrl(): String? {
+        val media = embedded?.featuredMedia?.firstOrNull()
+        return media?.mediaDetails?.sizes?.medium?.sourceUrl
+            ?: media?.mediaDetails?.sizes?.mediumLarge?.sourceUrl
+            ?: media?.sourceUrl
+    }
+
     fun getAuthorName(): String {
         return embedded?.authors?.firstOrNull()?.name ?: "Unknown"
     }

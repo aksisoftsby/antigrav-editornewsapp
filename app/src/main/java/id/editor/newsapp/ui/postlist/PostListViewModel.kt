@@ -30,7 +30,7 @@ class PostListViewModel : ViewModel() {
         if (isLoadingMore) return
 
         isLoadingMore = true
-        _postsState.value = if (postList.isEmpty()) Result.Loading else Result.Success(Pair(postList, totalPages)) // show loading only for first page load
+        _postsState.value = Result.Loading
         
         viewModelScope.launch {
             val result = when {

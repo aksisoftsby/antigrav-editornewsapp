@@ -62,19 +62,24 @@ class PostListFragment : Fragment() {
         }
         binding.postsRecyclerView.adapter = postAdapter
 
-        // Scroll listener for pagination
+        // Scroll listener for pagination (infinite scroll)
         binding.postsRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
-                val visibleItemCount = layoutManager.childCount
-                val totalItemCount = layoutManager.itemCount
-                val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+                
+                // Only trigger when scrolling down
+                if (dy > 0) {
+                    val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                    val visibleItemCount = layoutManager.childCount
+                    val totalItemCount = layoutManager.itemCount
+                    val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
 
-                if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
-                    && firstVisibleItemPosition >= 0
-                ) {
-                    viewModel.loadPosts(categoryId = args.categoryId, tagId = args.tagId, reset = false)
+                    // Pre-fetch when user is 5 items away from the bottom of the list
+                    if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount - 5
+                        && firstVisibleItemPosition >= 0
+                    ) {
+                        viewModel.loadPosts(categoryId = args.categoryId, tagId = args.tagId, reset = false)
+                    }
                 }
             }
         })

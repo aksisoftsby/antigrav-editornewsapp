@@ -23,4 +23,11 @@ data class Page(
     fun getFeaturedImageUrl(): String? {
         return embedded?.featuredMedia?.firstOrNull()?.sourceUrl
     }
+
+    fun getFeaturedImageMediumUrl(): String? {
+        val media = embedded?.featuredMedia?.firstOrNull()
+        return media?.mediaDetails?.sizes?.medium?.sourceUrl
+            ?: media?.mediaDetails?.sizes?.mediumLarge?.sourceUrl
+            ?: media?.sourceUrl
+    }
 }

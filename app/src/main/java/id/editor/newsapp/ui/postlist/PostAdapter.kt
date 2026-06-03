@@ -64,16 +64,27 @@ class PostAdapter(private val onPostClick: (Post) -> Unit) :
                 post.getAuthorName()
             ) + " • " + formattedDate
 
-            // Load featured image
-            val imageUrl = post.getFeaturedImageUrl()
+            // Load featured image (lazy loaded by posting to the message queue and using smaller medium image size)
+            binding.root.tag = post.id
+            val imageUrl = post.getFeaturedImageMediumUrl()
             if (!imageUrl.isNullOrEmpty()) {
-                Glide.with(binding.postImage.context)
-                    .load(imageUrl)
-                    .placeholder(R.drawable.gradient_overlay)
-                    .error(R.drawable.gradient_overlay)
-                    .into(binding.postImage)
                 binding.postImage.visibility = android.view.View.VISIBLE
+                binding.postImage.post {
+                    if (binding.root.tag == post.id) {
+                        val thumbnailRequest = Glide.with(binding.postImage.context)
+                            .load(imageUrl)
+                            .sizeMultiplier(0.1f)
+
+                        Glide.with(binding.postImage.context)
+                            .load(imageUrl)
+                            .thumbnail(thumbnailRequest)
+                            .placeholder(R.drawable.gradient_overlay)
+                            .error(R.drawable.gradient_overlay)
+                            .into(binding.postImage)
+                    }
+                }
             } else {
+                Glide.with(binding.postImage.context).clear(binding.postImage)
                 binding.postImage.visibility = android.view.View.GONE
             }
         }
